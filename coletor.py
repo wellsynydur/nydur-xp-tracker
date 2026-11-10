@@ -47,58 +47,32 @@ def coletar_categoria(categoria):
 
     jogadores = {}
 
-    # Captura os jogadores da tabela
+    # Captura tabela: cada linha tem posição, nível e XP; nome vem no link.
     for linha in soup.find_all("tr"):
-
-        colunas = linha.find_all("td")
-        if colunas:
-            print("CELULAS:", [
-                c.get_text(" ", strip=True)
-                for c in colunas
-            ])
-        if len(colunas) < 4:
-            continue
-
-        textos = [
-            coluna.get_text(" ", strip=True)
-            for coluna in colunas
-        ]
-
-        # Posição
-        match_pos = re.search(
-            r"#?\s*(\d+)",
-            textos[0]
-        )
-
+        celulas = linha.find_all(["td", "th"])
+        textos = [c.get_text(" ", strip=True) for c in celulas]
+        texto_linha = " ".join(textos)
+        match_pos = re.search(r"#\s*(\d+)", texto_linha)
         if not match_pos:
             continue
-
         posicao = int(match_pos.group(1))
-
-        # Nome do jogador
-        link = colunas[1].find("a")
-
-        if link:
-            nome = limpar_nome(
-                link.get_text(" ", strip=True)
-            )
-        else:
-            nome = limpar_nome(textos[1])
-
-        # Nível da categoria
-        level = numero(textos[2])
-
-        # Experiência da categoria
-        xp = numero(textos[3])
-
-        if not nome:
+        if not 4 <= posicao <= 50:
             continue
-
+        link = linha.find("a")
+        nome = limpar_nome(link.get_text(" ", strip=True)) if link else ""
+        # Duas células numéricas: nível e XP; posição é ignorada.
+        nums = []
+        for valor in textos:
+            if re.search(r"#\s*\d+", valor):
+                continue
+            n = numero(valor)
+            if n is not None:
+                nums.append(n)
+        if not nome or len(nums) < 2:
+            continue
         jogadores[posicao] = {
-            "posicao": posicao,
-            "nome": nome,
-            "level": level,
-            "xp": xp
+            "posicao": posicao, "nome": nome,
+            "level": nums[-2], "xp": nums[-1]
         }
 
     # Captura os cards do Top 1, 2 e 3
