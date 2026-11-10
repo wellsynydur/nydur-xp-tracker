@@ -60,7 +60,25 @@ def coletar_categoria(categoria):
             continue
         link = linha.find("a")
         nome = limpar_nome(link.get_text(" ", strip=True)) if link else ""
-        # Duas células numéricas: nível e XP; posição é ignorada.
+
+        # Alguns rankings exibem o nome como atributo da imagem/avatar,
+        # e não como texto do link.
+        if not nome:
+            imagem = linha.find("img")
+            if imagem:
+                nome = limpar_nome(
+                    imagem.get("alt") or imagem.get("title") or ""
+                )
+        if not nome:
+            for elemento in linha.find_all(True):
+                nome = limpar_nome(
+                    elemento.get("data-name") or elemento.get("title") or ""
+                )
+                if nome and not re.search(r"#?\s*\d+", nome):
+                    break
+
+        # Nome pode estar em coluna separada ou em atributos; os números
+        # da linha são posição, nível e XP.
         nums = []
         for valor in textos:
             if re.search(r"#\s*\d+", valor):
@@ -68,6 +86,21 @@ def coletar_categoria(categoria):
             n = numero(valor)
             if n is not None:
                 nums.append(n)
+
+        if not nome:
+            # Fallback: usa texto integral da linha e remove posição,
+            # nível e XP, se o nome estiver presente como texto.
+            texto_integral = limpar_nome(linha.get_text(" ", strip=True))
+            texto_integral = re.sub(r"#\s*\d+", " ", texto_integral)
+            for n in nums:
+                texto_integral = re.sub(
+                    rf"(?<!\d){n:,}".replace(",", r"[,.]?"),
+                    " ",
+                    texto_integral,
+                    count=1
+                )
+            nome = limpar_nome(texto_integral)
+
         if not nome or len(nums) < 2:
             continue
         jogadores[posicao] = {
