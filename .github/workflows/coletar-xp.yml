@@ -34,7 +34,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ranking_atual.json
+          git add ranking_atual.json historico_xp.json
           git diff --cached --quiet || git commit -m "Atualizar ranking de XP"
           git push
           
