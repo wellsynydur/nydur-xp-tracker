@@ -3,10 +3,12 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import re
+import os
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
 BASE_URL = "https://nyduronline.com/ranking.php"
+HISTORICO_FILE = "historico_xp.json"
 
 CATEGORIAS = {
     "level": "XP Level",
@@ -252,6 +254,44 @@ def coletar():
             indent=2
         )
 
+    # Salva uma fotografia histórica de cada coleta válida.
+    historico = {"coletas": []}
+    if os.path.exists(HISTORICO_FILE):
+        try:
+            with open(HISTORICO_FILE, "r", encoding="utf-8") as f:
+                historico = json.load(f)
+            if not isinstance(historico.get("coletas"), list):
+                historico = {"coletas": []}
+        except (OSError, json.JSONDecodeError):
+            historico = {"coletas": []}
+
+    anterior = historico["coletas"][-1] if historico["coletas"] else None
+    mapa_anterior = {}
+    if anterior:
+        for cat, bloco in anterior.get("categorias", {}).items():
+            for p in bloco.get("jogadores", []):
+                mapa_anterior[(cat, str(p.get("nome", "")).casefold())] = p
+
+    for cat, bloco in resultado["categorias"].items():
+        for p in bloco["jogadores"]:
+            prev = mapa_anterior.get((cat, str(p.get("nome", "")).casefold()))
+            p["xp_ganho"] = None
+            p["observacao"] = None
+            if prev is None:
+                p["observacao"] = "primeira coleta deste jogador/categoria"
+            elif p.get("level") != prev.get("level"):
+                p["observacao"] = "level mudou; intervalo não calculável com precisão"
+            else:
+                delta = int(p.get("xp") or 0) - int(prev.get("xp") or 0)
+                if delta >= 0:
+                    p["xp_ganho"] = delta
+                else:
+                    p["observacao"] = "XP diminuiu; ganho não contabilizado"
+
+    historico["coletas"].append(resultado)
+    with open(HISTORICO_FILE, "w", encoding="utf-8") as f:
+        json.dump(historico, f, ensure_ascii=False, separators=(",", ":"))
+    print(f"Histórico salvo: {len(historico['coletas'])} coletas.")
     print("Coleta finalizada: 250 jogadores.")
     print("5 categorias completas.")
     print("Top 3 incluído em cada categoria.")
