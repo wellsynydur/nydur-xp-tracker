@@ -37,6 +37,17 @@ def coletar_categoria(categoria):
 
     soup = BeautifulSoup(resposta.text, "html.parser")
 
+    print("\n===== DIAGNOSTICO =====")
+    print("Categoria:", categoria)
+    print("Status HTTP:", resposta.status_code)
+    print("Tamanho HTML:", len(resposta.text))
+    print("Tabelas encontradas:", len(soup.find_all("table")))
+    print("Linhas encontradas:", len(soup.find_all("tr")))
+    print("Cards encontrados:", len(soup.find_all(["div", "article"])))
+    print("===== INICIO DO HTML =====")
+    print(soup.get_text(" ", strip=True)[:2500])
+    print("===== FIM DO DIAGNOSTICO =====\n")
+    
     jogadores = {}
 
     # Lê os jogadores da tabela
