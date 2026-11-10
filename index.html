@@ -1,72 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nydur XP Tracker</title>
-<style>
-*{box-sizing:border-box}body{margin:0;background:#0b1020;color:#fff;font-family:Arial,sans-serif}
-header{padding:22px;background:#151c32;border-bottom:1px solid #293451}header h1{margin:0;color:#7c9cff;font-size:25px}header p{color:#aab5d0;margin-bottom:0}
-main{max-width:900px;margin:auto;padding:20px}.card{background:#151c32;border:1px solid #293451;border-radius:12px;padding:18px;margin-bottom:18px}
-h2{font-size:19px;margin-top:0}select,input,button{width:100%;padding:13px;margin-top:10px;border-radius:8px;border:1px solid #34415f;background:#0b1020;color:white;font-size:15px}
-button{background:#526fff;border:0;font-weight:bold;cursor:pointer}.stat{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid #293451}.stat:last-child{border-bottom:0}.value{color:#7c9cff;font-weight:bold;text-align:right}
-.notice{color:#aab5d0;font-size:13px;line-height:1.5}.player{padding:12px;border-bottom:1px solid #293451}.player:last-child{border:0}.player strong{display:block;margin-bottom:5px}.small{color:#aab5d0;font-size:13px}
-footer{text-align:center;padding:20px;color:#75809c;font-size:12px}
-</style>
-</head>
-<body>
-<header><h1>⚔ NYDUR XP TRACKER</h1><p>Ranking e acompanhamento de experiência</p></header>
-<main>
-<section class="card">
-<h2>🏆 Ranking atual</h2>
-<select id="categoria" aria-label="Categoria">
-<option value="level">XP Level</option><option value="magic">Magia</option><option value="strength">Força</option><option value="pally">Paladino</option><option value="defense">Defesa</option>
-</select>
-<div id="atualizacao" class="notice">Carregando dados...</div>
-<div id="ranking"></div>
-</section>
-<section class="card">
-<h2>🔎 Pesquisar jogador</h2>
-<input id="jogador" type="search" placeholder="Digite o nome do jogador">
-<button id="buscar">Pesquisar</button><div id="resultado"></div>
-</section>
-<section class="card">
-<h2>📊 Ranking diário / semanal / mensal</h2>
-<select id="periodo"><option value="daily">Diário</option><option value="weekly">Semanal</option><option value="monthly">Mensal</option></select>
-<div id="periodoInfo" class="notice">O ranking diário, semanal e mensal depende do histórico de coletas. Esta página mostra o ranking atual oficial coletado.</div>
-</section>
-</main>
-<footer>Nydur XP Tracker</footer>
-<script>
-const nomesCategorias={level:"XP Level",magic:"Magia",strength:"Força",pally:"Paladino",defense:"Defesa"};
-let dados=null;
-const fmt=n=>Number(n||0).toLocaleString("pt-BR");
-function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
-function jogadoresTodos(){if(!dados?.categorias)return [];return Object.entries(dados.categorias).flatMap(([cat,obj])=>(obj.jogadores||[]).map(p=>({...p,categoria:cat,nomeCategoria:obj.nome||nomesCategorias[cat]||cat})));}
-function renderRanking(){
- const cat=document.getElementById("categoria").value, obj=dados?.categorias?.[cat], el=document.getElementById("ranking");
- if(!obj){el.innerHTML='<p class="notice">Dados desta categoria não encontrados.</p>';return;}
- const jogadores=obj.jogadores||[];
- el.innerHTML=jogadores.map((p,i)=>'<div class="player"><strong>#'+esc(p.posicao??i+1)+' '+esc(p.nome)+'</strong><div class="small">Nível: '+fmt(p.level)+' · XP: '+fmt(p.xp)+'</div></div>').join("");
-}
-function pesquisar(){
- const q=document.getElementById("jogador").value.trim().toLocaleLowerCase("pt-BR"),el=document.getElementById("resultado");
- if(!q){el.innerHTML='<p class="notice">Digite o nome do jogador.</p>';return;}
- const found=jogadoresTodos().filter(p=>p.nome.toLocaleLowerCase("pt-BR").includes(q));
- el.innerHTML=found.length?found.map(p=>'<div class="player"><strong>'+esc(p.nome)+' · '+esc(p.nomeCategoria)+'</strong><div class="small">Posição: #'+fmt(p.posicao)+' · Nível: '+fmt(p.level)+' · XP: '+fmt(p.xp)+'</div></div>').join(""):'<p class="notice">Jogador não encontrado nos rankings coletados.</p>';
-}
-async function carregar(){
- try{
- const res=await fetch("ranking_atual.json?ts="+Date.now(),{cache:"no-store"});if(!res.ok)throw new Error("HTTP "+res.status);
- dados=await res.json();renderRanking();
- const dt=dados.data?new Date(dados.data):null;
- document.getElementById("atualizacao").textContent="Última coleta: "+(dt&&!isNaN(dt)?dt.toLocaleString("pt-BR"):"data registrada no arquivo")+". Jogadores: "+jogadoresTodos().length+" / 250.";
- }catch(e){document.getElementById("atualizacao").textContent="Não foi possível carregar ranking_atual.json. "+e.message;document.getElementById("ranking").innerHTML="";}
-}
-document.getElementById("categoria").addEventListener("change",renderRanking);
-document.getElementById("buscar").addEventListener("click",pesquisar);
-document.getElementById("jogador").addEventListener("keydown",e=>{if(e.key==="Enter")pesquisar();});
-document.getElementById("periodo").addEventListener("change",e=>{document.getElementById("periodoInfo").textContent=e.target.value==="daily"?"O ranking diário será exibido quando o histórico de XP por jogador estiver disponível.":e.target.value==="weekly"?"O ranking semanal requer histórico acumulado das coletas.":"O ranking mensal requer histórico acumulado das coletas.";});
-carregar();
-</script>
-</body></html>
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nydur XP Tracker</title><style>*{box-sizing:border-box}body{margin:0;background:#0b1020;color:#fff;font:15px Arial}header,section{background:#151c32;border:1px solid #293451;border-radius:12px;padding:16px;margin:14px}header h1{color:#7c9cff;margin:0}main{max-width:950px;margin:auto}select,input,button{width:100%;padding:12px;margin:8px 0;background:#0b1020;color:white;border:1px solid #34415f;border-radius:8px}button{background:#526fff;border:0;font-weight:bold}.muted{color:#aab5d0;font-size:13px}.row{padding:10px 0;border-bottom:1px solid #293451}table{width:100%;border-collapse:collapse;min-width:500px}td,th{text-align:left;padding:9px;border-bottom:1px solid #293451}.scroll{overflow:auto}</style></head><body><header><h1>⚔ NYDUR XP TRACKER</h1><p class="muted">XP por hora · rankings diário, semanal e mensal</p></header><main><section><h2>Ranking atual</h2><select id="cat"><option value="level">XP Level</option><option value="magic">Magia</option><option value="strength">Força</option><option value="pally">Paladino</option><option value="defense">Defesa</option></select><div id="status" class="muted">Carregando...</div><div id="current"></div></section><section><h2>Ranking de XP ganho</h2><select id="period"><option value="daily">Diário (hoje)</option><option value="weekly">Semanal (segunda-feira)</option><option value="monthly">Mensal</option></select><select id="gaincat"><option value="level">XP Level</option><option value="magic">Magia</option><option value="strength">Força</option><option value="pally">Paladino</option><option value="defense">Defesa</option></select><div id="gains" class="muted"></div></section><section><h2>Histórico por jogador</h2><select id="histcat"><option value="level">XP Level</option><option value="magic">Magia</option><option value="strength">Força</option><option value="pally">Paladino</option><option value="defense">Defesa</option></select><input id="player" placeholder="Digite nome ou parte do nome"><button id="search">Consultar histórico</button><div id="history"></div></section></main><script>
+const labels={level:"XP Level",magic:"Magia",strength:"Força",pally:"Paladino",defense:"Defesa"};let nowData=null,historyData=[];
+const num=n=>Number(n||0).toLocaleString("pt-BR");const safe=s=>String(s??"").replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[x]));
+function list(cat){return nowData?.categorias?.[cat]?.jogadores||[]}
+function renderCurrent(){current.innerHTML=list(cat.value).map((p,i)=>'<div class="row"><b>#'+safe(p.posicao||i+1)+' '+safe(p.nome)+'</b><div class="muted">Level '+num(p.level)+' · XP '+num(p.xp)+'</div></div>').join("")||"Sem dados";}
+function periodStart(v){let d=new Date();d.setHours(0,0,0,0);if(v==="monthly")d.setDate(1);if(v==="weekly"){let back=(d.getDay()+6)%7;d.setDate(d.getDate()-back)}return d}
+function renderGains(){let start=periodStart(period.value),c=gaincat.value,total={};historyData.forEach(s=>{if(new Date(s.data)<start)return;(s.categorias?.[c]?.jogadores||[]).forEach(p=>{if(p.xp_ganho===null||p.xp_ganho===undefined)return;total[p.nome]=(total[p.nome]||0)+Number(p.xp_ganho)})});let rows=Object.entries(total).sort((a,b)=>b[1]-a[1]).slice(0,50);gains.innerHTML=rows.length?'<p class="muted">Desde '+start.toLocaleDateString("pt-BR")+'</p><div class="scroll"><table><tr><th>#</th><th>Jogador</th><th>XP ganho</th></tr>'+rows.map((p,i)=>'<tr><td>'+(i+1)+'</td><td>'+safe(p[0])+'</td><td>'+num(p[1])+'</td></tr>').join("")+'</table></div>':'Ainda sem dados suficientes para este período. O ranking começa a se formar após as coletas.'}
+function searchHistory(){let q=player.value.trim().toLowerCase(),c=histcat.value;if(!q){history.innerHTML='<p class="muted">Digite o nome do jogador.</p>';return}let rows=[];historyData.forEach(s=>(s.categorias?.[c]?.jogadores||[]).forEach(p=>{if(String(p.nome).toLowerCase().includes(q))rows.push({...p,data:s.data})}));rows.sort((a,b)=>new Date(b.data)-new Date(a.data));history.innerHTML=rows.length?'<div class="scroll"><table><tr><th>Data/hora</th><th>Level</th><th>XP atual</th><th>XP ganho</th></tr>'+rows.map(p=>'<tr><td>'+new Date(p.data).toLocaleString("pt-BR")+'</td><td>'+num(p.level)+'</td><td>'+num(p.xp)+'</td><td>'+(p.xp_ganho==null?"—":num(p.xp_ganho))+'</td></tr>').join("")+'</table></div>':'Jogador não encontrado no histórico.'}
+async function load(){try{let a=await fetch("ranking_atual.json?"+Date.now()),h=await fetch("historico_xp.json?"+Date.now());if(!a.ok)throw Error("ranking indisponível");nowData=await a.json();historyData=h.ok?(await h.json()).coletas||[]:[];renderCurrent();status.textContent="Última coleta: "+new Date(nowData.data).toLocaleString("pt-BR")+" · "+Object.values(nowData.categorias||{}).reduce((n,x)=>n+(x.jogadores||[]).length,0)+"/250 jogadores · "+historyData.length+" coletas históricas";renderGains()}catch(e){status.textContent="Não foi possível carregar dados: "+e.message;gains.textContent="Histórico ainda não disponível."}}
+cat.addEventListener("change",renderCurrent);period.addEventListener("change",renderGains);gaincat.addEventListener("change",renderGains);search.addEventListener("click",searchHistory);load();
+</script></body></html>
