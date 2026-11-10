@@ -1,10 +1,48 @@
 {
-  "data": "2026-11-10T01:50:52.578241-03:00",
+  "data": "2026-11-10T01:59:34.053222-03:00",
   "categorias": {
     "level": {
       "nome": "XP Level",
-      "jogadores": [],
-      "top3": []
+      "jogadores": [
+        {
+          "posicao": 1,
+          "nome": "Dsiey",
+          "level": 376,
+          "xp": 8138
+        },
+        {
+          "posicao": 2,
+          "nome": "Descarte",
+          "level": 239,
+          "xp": 405558
+        },
+        {
+          "posicao": 3,
+          "nome": "Mystery",
+          "level": 213,
+          "xp": 1059189
+        }
+      ],
+      "top3": [
+        {
+          "posicao": 1,
+          "nome": "Dsiey",
+          "level": 376,
+          "xp": 8138
+        },
+        {
+          "posicao": 2,
+          "nome": "Descarte",
+          "level": 239,
+          "xp": 405558
+        },
+        {
+          "posicao": 3,
+          "nome": "Mystery",
+          "level": 213,
+          "xp": 1059189
+        }
+      ]
     },
     "magic": {
       "nome": "Magia",
