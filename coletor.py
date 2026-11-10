@@ -2,6 +2,8 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import re
+import os
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
@@ -15,7 +17,10 @@ CATEGORIAS = {
     "defense": "Defesa"
 }
 
-JOGADORES = ["Wellsy", "Kann"]
+def numero(texto):
+    texto = texto.replace(".", "").replace(",", "")
+    resultado = re.search(r"\d+", texto)
+    return int(resultado.group()) if resultado else 0
 
 def coletar_categoria(categoria):
     url = f"{BASE_URL}?lang=pt&category={categoria}"
@@ -23,35 +28,57 @@ def coletar_categoria(categoria):
     resposta = requests.get(
         url,
         timeout=30,
-        headers={
-            "User-Agent": "Mozilla/5.0"
-        }
+        headers={"User-Agent": "Mozilla/5.0"}
     )
 
     resposta.raise_for_status()
 
-    soup = BeautifulSoup(
-        resposta.text,
-        "html.parser"
-    )
-
+    soup = BeautifulSoup(resposta.text, "html.parser")
     jogadores = []
 
     for linha in soup.select("tr"):
         colunas = linha.find_all("td")
 
-        if len(colunas) < 2:
+        if len(colunas) < 3:
             continue
 
-        texto = " ".join(
+        textos = [
             coluna.get_text(" ", strip=True)
             for coluna in colunas
-        )
+        ]
 
-        jogadores.append(texto)
+        posicao = numero(textos[0])
+
+        if posicao <= 0:
+            continue
+
+        nome = textos[1]
+
+        if not nome:
+            continue
+
+        level = None
+        xp = None
+
+        for texto in textos[2:]:
+            valor = numero(texto)
+
+            if valor > 0:
+                if level is None:
+                    level = valor
+                else:
+                    xp = valor
+
+        jogadores.append({
+            "posicao": posicao,
+            "nome": nome,
+            "level": level,
+            "xp": xp
+        })
+
+    jogadores.sort(key=lambda x: x["posicao"])
 
     return jogadores
-
 
 def coletar():
     agora = datetime.now(
@@ -65,26 +92,32 @@ def coletar():
 
     for categoria, nome in CATEGORIAS.items():
         try:
-            dados = coletar_categoria(categoria)
+            jogadores = coletar_categoria(categoria)
 
             resultado["categorias"][categoria] = {
                 "nome": nome,
-                "jogadores": dados
+                "jogadores": jogadores,
+                "top3": jogadores[:3]
             }
 
-            print(
-                f"{nome}: {len(dados)} registros"
-            )
+            print(f"{nome}: {len(jogadores)} jogadores")
+
+            for jogador in jogadores[:3]:
+                print(
+                    jogador["posicao"],
+                    jogador["nome"],
+                    jogador["level"],
+                    jogador["xp"]
+                )
 
         except Exception as erro:
-            print(
-                f"Erro em {nome}: {erro}"
-            )
+            print(f"Erro em {nome}: {erro}")
 
             resultado["categorias"][categoria] = {
                 "nome": nome,
-                "erro": str(erro),
-                "jogadores": []
+                "jogadores": [],
+                "top3": [],
+                "erro": str(erro)
             }
 
     with open(
@@ -92,7 +125,6 @@ def coletar():
         "w",
         encoding="utf-8"
     ) as arquivo:
-
         json.dump(
             resultado,
             arquivo,
@@ -102,7 +134,6 @@ def coletar():
 
     print("Coleta finalizada.")
 
-
 if __name__ == "__main__":
     coletar()
-          
+    
