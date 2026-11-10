@@ -1,5 +1,5 @@
 {
-  "data": "2026-11-10T02:26:09.014406-03:00",
+  "data": "2026-11-10T03:07:09.890351-03:00",
   "categorias": {
     "level": {
       "nome": "XP Level",
@@ -56,7 +56,7 @@
           "posicao": 9,
           "nome": "W Wellsy",
           "level": 141,
-          "xp": 370238
+          "xp": 372583
         },
         {
           "posicao": 10,
@@ -152,7 +152,7 @@
           "posicao": 25,
           "nome": "C Call Me Dad",
           "level": 103,
-          "xp": 249499
+          "xp": 259384
         },
         {
           "posicao": 26,
@@ -988,8 +988,8 @@
         {
           "posicao": 2,
           "nome": "Wellsy",
-          "level": 50,
-          "xp": 194413
+          "level": 51,
+          "xp": 2267
         },
         {
           "posicao": 3,
@@ -1073,7 +1073,7 @@
           "posicao": 16,
           "nome": "C Call Me Dad",
           "level": 37,
-          "xp": 613
+          "xp": 722
         },
         {
           "posicao": 17,
@@ -1290,8 +1290,8 @@
         {
           "posicao": 2,
           "nome": "Wellsy",
-          "level": 50,
-          "xp": 194413
+          "level": 51,
+          "xp": 2267
         },
         {
           "posicao": 3,
@@ -1314,7 +1314,7 @@
           "posicao": 2,
           "nome": "Wellsy",
           "level": 53,
-          "xp": 271854
+          "xp": 280925
         },
         {
           "posicao": 3,
@@ -1518,7 +1518,7 @@
           "posicao": 36,
           "nome": "C Call Me Dad",
           "level": 36,
-          "xp": 25448
+          "xp": 25520
         },
         {
           "posicao": 37,
@@ -1616,7 +1616,7 @@
           "posicao": 2,
           "nome": "Wellsy",
           "level": 53,
-          "xp": 271854
+          "xp": 280925
         },
         {
           "posicao": 3,
