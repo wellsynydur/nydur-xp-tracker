@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nydur XP Tracker</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0b1020;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 22px;
+  background: #151c32;
+  border-bottom: 1px solid #293451;
+}
+
+header h1 {
+  margin: 0;
+  color: #7c9cff;
+  font-size: 25px;
+}
+
+header p {
+  color: #aab5d0;
+  margin-bottom: 0;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.card {
+  background: #151c32;
+  border: 1px solid #293451;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+h2 {
+  font-size: 19px;
+  margin-top: 0;
+}
+
+select, input, button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #34415f;
+  background: #0b1020;
+  color: white;
+  font-size: 15px;
+}
+
+button {
+  background: #526fff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:active {
+  opacity: 0.8;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 0;
+  border-bottom: 1px solid #293451;
+}
+
+.stat:last-child {
+  border-bottom: none;
+}
+
+.value {
+  color: #7c9cff;
+  font-weight: bold;
+}
+
+.notice {
+  color: #aab5d0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #75809c;
+  font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>⚔ NYDUR XP TRACKER</h1>
+  <p>Ranking e acompanhamento de experiência</p>
+</header>
+
+<main>
+
+  <section class="card">
+    <h2>🏆 Ranking de XP</h2>
+
+    <select id="periodo">
+      <option value="daily">Ranking diário</option>
+      <option value="weekly">Ranking semanal</option>
+      <option value="monthly">Ranking mensal</option>
+    </select>
+
+    <select id="categoria">
+      <option value="level">XP Level</option>
+      <option value="magic">Magia</option>
+      <option value="strength">Força</option>
+      <option value="pally">Paladino</option>
+    </select>
+
+    <div id="ranking">
+      <div class="stat">
+        <span>1. Wellsy</span>
+        <span class="value">Aguardando dados</span>
+      </div>
+      <div class="stat">
+        <span>2. Kann</span>
+        <span class="value">Aguardando dados</span>
+      </div>
+    </div>
+
+    <p class="notice">
+      O ranking será preenchido após a conexão com a coleta automática.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>🔎 Pesquisar jogador</h2>
+
+    <input
+      id="jogador"
+      type="text"
+      placeholder="Digite o nome do jogador"
+    >
+
+    <button onclick="pesquisar()">
+      Pesquisar
+    </button>
+
+    <div id="resultado"></div>
+  </section>
+
+  <section class="card">
+    <h2>📊 Histórico de XP</h2>
+
+    <div class="stat">
+      <span>Coleta automática</span>
+      <span class="value">Em configuração</span>
+    </div>
+
+    <div class="stat">
+      <span>Última atualização</span>
+      <span class="value">Aguardando</span>
+    </div>
+
+    <p class="notice">
+      O histórico será conectado ao banco de dados do projeto.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  Nydur XP Tracker — Projeto em desenvolvimento
+</footer>
+
+<script>
+function pesquisar() {
+  const nome = document
+    .getElementById("jogador")
+    .value.trim();
+
+  const resultado =
+    document.getElementById("resultado");
+
+  if (!nome) {
+    resultado.innerHTML =
+      "<p>Digite o nome de um jogador.</p>";
+    return;
+  }
+
+  resultado.innerHTML =
+    "<p>Jogador: <strong>" +
+    nome.replace(/[&<>"']/g, "") +
+    "</strong></p>" +
+    "<p class='notice'>A pesquisa será conectada à base de jogadores.</p>";
+}
+</script>
+
+</body>
+</html>
