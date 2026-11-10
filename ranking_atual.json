@@ -1,264 +1,1539 @@
 {
-  "data": "2026-11-10T01:33:06.930757-03:00",
+  "data": "2026-11-10T01:40:42.775222-03:00",
   "categorias": {
     "level": {
       "nome": "XP Level",
       "jogadores": [
-        "#4 202 740.952",
-        "#5 195 975.825",
-        "#6 193 572.978",
-        "#7 169 406.321",
-        "#8 159 201.976",
-        "#9 141 367.558",
-        "#10 132 329.823",
-        "#11 131 3.047",
-        "#12 130 129.495",
-        "#13 122 204.248",
-        "#14 118 394.012",
-        "#15 118 63.541",
-        "#16 116 128.287",
-        "#17 116 26.858",
-        "#18 115 171.098",
-        "#19 114 14.708",
-        "#20 112 199.022",
-        "#21 112 53.643",
-        "#22 112 5.224",
-        "#23 110 280.961",
-        "#24 105 103.344",
-        "#25 103 249.499",
-        "#26 103 227.065",
-        "#27 103 43.006",
-        "#28 100 68.360",
-        "#29 97 78.605",
-        "#30 94 71.448",
-        "#31 89 113.936",
-        "#32 88 170.160",
-        "#33 86 35.847",
-        "#34 85 10.082",
-        "#35 81 195.538",
-        "#36 81 47.539",
-        "#37 80 12.149",
-        "#38 79 37.256",
-        "#39 79 19.570",
-        "#40 76 56.497",
-        "#41 73 150.893",
-        "#42 73 91.299",
-        "#43 73 77.755",
-        "#44 73 638",
-        "#45 72 97.651",
-        "#46 72 14.436",
-        "#47 71 132.611",
-        "#48 70 161.644",
-        "#49 65 33.091",
-        "#50 63 114.415"
+        {
+          "posicao": 4,
+          "nome": "202",
+          "level": 740952,
+          "xp": null
+        },
+        {
+          "posicao": 5,
+          "nome": "195",
+          "level": 975825,
+          "xp": null
+        },
+        {
+          "posicao": 6,
+          "nome": "193",
+          "level": 572978,
+          "xp": null
+        },
+        {
+          "posicao": 7,
+          "nome": "169",
+          "level": 406321,
+          "xp": null
+        },
+        {
+          "posicao": 8,
+          "nome": "159",
+          "level": 201976,
+          "xp": null
+        },
+        {
+          "posicao": 9,
+          "nome": "141",
+          "level": 367558,
+          "xp": null
+        },
+        {
+          "posicao": 10,
+          "nome": "132",
+          "level": 329823,
+          "xp": null
+        },
+        {
+          "posicao": 11,
+          "nome": "131",
+          "level": 3047,
+          "xp": null
+        },
+        {
+          "posicao": 12,
+          "nome": "130",
+          "level": 129495,
+          "xp": null
+        },
+        {
+          "posicao": 13,
+          "nome": "122",
+          "level": 204248,
+          "xp": null
+        },
+        {
+          "posicao": 14,
+          "nome": "118",
+          "level": 394012,
+          "xp": null
+        },
+        {
+          "posicao": 15,
+          "nome": "118",
+          "level": 63541,
+          "xp": null
+        },
+        {
+          "posicao": 16,
+          "nome": "116",
+          "level": 128287,
+          "xp": null
+        },
+        {
+          "posicao": 17,
+          "nome": "116",
+          "level": 26858,
+          "xp": null
+        },
+        {
+          "posicao": 18,
+          "nome": "115",
+          "level": 171098,
+          "xp": null
+        },
+        {
+          "posicao": 19,
+          "nome": "114",
+          "level": 14708,
+          "xp": null
+        },
+        {
+          "posicao": 20,
+          "nome": "112",
+          "level": 199022,
+          "xp": null
+        },
+        {
+          "posicao": 21,
+          "nome": "112",
+          "level": 53643,
+          "xp": null
+        },
+        {
+          "posicao": 22,
+          "nome": "112",
+          "level": 5224,
+          "xp": null
+        },
+        {
+          "posicao": 23,
+          "nome": "110",
+          "level": 280961,
+          "xp": null
+        },
+        {
+          "posicao": 24,
+          "nome": "105",
+          "level": 103344,
+          "xp": null
+        },
+        {
+          "posicao": 25,
+          "nome": "103",
+          "level": 249499,
+          "xp": null
+        },
+        {
+          "posicao": 26,
+          "nome": "103",
+          "level": 227065,
+          "xp": null
+        },
+        {
+          "posicao": 27,
+          "nome": "103",
+          "level": 43006,
+          "xp": null
+        },
+        {
+          "posicao": 28,
+          "nome": "100",
+          "level": 68360,
+          "xp": null
+        },
+        {
+          "posicao": 29,
+          "nome": "97",
+          "level": 78605,
+          "xp": null
+        },
+        {
+          "posicao": 30,
+          "nome": "94",
+          "level": 71448,
+          "xp": null
+        },
+        {
+          "posicao": 31,
+          "nome": "89",
+          "level": 113936,
+          "xp": null
+        },
+        {
+          "posicao": 32,
+          "nome": "88",
+          "level": 170160,
+          "xp": null
+        },
+        {
+          "posicao": 33,
+          "nome": "86",
+          "level": 35847,
+          "xp": null
+        },
+        {
+          "posicao": 34,
+          "nome": "85",
+          "level": 10082,
+          "xp": null
+        },
+        {
+          "posicao": 35,
+          "nome": "81",
+          "level": 195538,
+          "xp": null
+        },
+        {
+          "posicao": 36,
+          "nome": "81",
+          "level": 47539,
+          "xp": null
+        },
+        {
+          "posicao": 37,
+          "nome": "80",
+          "level": 12149,
+          "xp": null
+        },
+        {
+          "posicao": 38,
+          "nome": "79",
+          "level": 37256,
+          "xp": null
+        },
+        {
+          "posicao": 39,
+          "nome": "79",
+          "level": 19570,
+          "xp": null
+        },
+        {
+          "posicao": 40,
+          "nome": "76",
+          "level": 56497,
+          "xp": null
+        },
+        {
+          "posicao": 41,
+          "nome": "73",
+          "level": 150893,
+          "xp": null
+        },
+        {
+          "posicao": 42,
+          "nome": "73",
+          "level": 91299,
+          "xp": null
+        },
+        {
+          "posicao": 43,
+          "nome": "73",
+          "level": 77755,
+          "xp": null
+        },
+        {
+          "posicao": 44,
+          "nome": "73",
+          "level": 638,
+          "xp": null
+        },
+        {
+          "posicao": 45,
+          "nome": "72",
+          "level": 97651,
+          "xp": null
+        },
+        {
+          "posicao": 46,
+          "nome": "72",
+          "level": 14436,
+          "xp": null
+        },
+        {
+          "posicao": 47,
+          "nome": "71",
+          "level": 132611,
+          "xp": null
+        },
+        {
+          "posicao": 48,
+          "nome": "70",
+          "level": 161644,
+          "xp": null
+        },
+        {
+          "posicao": 49,
+          "nome": "65",
+          "level": 33091,
+          "xp": null
+        },
+        {
+          "posicao": 50,
+          "nome": "63",
+          "level": 114415,
+          "xp": null
+        }
+      ],
+      "top3": [
+        {
+          "posicao": 4,
+          "nome": "202",
+          "level": 740952,
+          "xp": null
+        },
+        {
+          "posicao": 5,
+          "nome": "195",
+          "level": 975825,
+          "xp": null
+        },
+        {
+          "posicao": 6,
+          "nome": "193",
+          "level": 572978,
+          "xp": null
+        }
       ]
     },
     "magic": {
       "nome": "Magia",
       "jogadores": [
-        "#4 42 20.484",
-        "#5 41 38.758",
-        "#6 41 28.207",
-        "#7 40 4.322",
-        "#8 39 3.185",
-        "#9 38 5.831",
-        "#10 37 807",
-        "#11 36 17.587",
-        "#12 36 1.011",
-        "#13 35 3.658",
-        "#14 35 2.375",
-        "#15 34 11.200",
-        "#16 33 4.409",
-        "#17 33 2.116",
-        "#18 33 559",
-        "#19 32 6.648",
-        "#20 31 4.695",
-        "#21 31 3.495",
-        "#22 30 5.827",
-        "#23 30 1.243",
-        "#24 30 530",
-        "#25 30 169",
-        "#26 29 5.686",
-        "#27 29 1.349",
-        "#28 29 860",
-        "#29 29 739",
-        "#30 28 4.987",
-        "#31 28 2.486",
-        "#32 28 1.485",
-        "#33 28 1.032",
-        "#34 27 3.997",
-        "#35 27 350",
-        "#36 26 2.277",
-        "#37 26 1.281",
-        "#38 25 2.635",
-        "#39 25 2.577",
-        "#40 25 1.921",
-        "#41 25 586",
-        "#42 24 2.553",
-        "#43 24 2.220",
-        "#44 24 1.548",
-        "#45 24 1.206",
-        "#46 24 1.000",
-        "#47 24 474",
-        "#48 23 1.385",
-        "#49 23 1.382",
-        "#50 23 1.264"
+        {
+          "posicao": 4,
+          "nome": "42",
+          "level": 20484,
+          "xp": null
+        },
+        {
+          "posicao": 5,
+          "nome": "41",
+          "level": 38758,
+          "xp": null
+        },
+        {
+          "posicao": 6,
+          "nome": "41",
+          "level": 28207,
+          "xp": null
+        },
+        {
+          "posicao": 7,
+          "nome": "40",
+          "level": 4322,
+          "xp": null
+        },
+        {
+          "posicao": 8,
+          "nome": "39",
+          "level": 3185,
+          "xp": null
+        },
+        {
+          "posicao": 9,
+          "nome": "38",
+          "level": 5831,
+          "xp": null
+        },
+        {
+          "posicao": 10,
+          "nome": "37",
+          "level": 807,
+          "xp": null
+        },
+        {
+          "posicao": 11,
+          "nome": "36",
+          "level": 17587,
+          "xp": null
+        },
+        {
+          "posicao": 12,
+          "nome": "36",
+          "level": 1011,
+          "xp": null
+        },
+        {
+          "posicao": 13,
+          "nome": "35",
+          "level": 3658,
+          "xp": null
+        },
+        {
+          "posicao": 14,
+          "nome": "35",
+          "level": 2375,
+          "xp": null
+        },
+        {
+          "posicao": 15,
+          "nome": "34",
+          "level": 11200,
+          "xp": null
+        },
+        {
+          "posicao": 16,
+          "nome": "33",
+          "level": 4409,
+          "xp": null
+        },
+        {
+          "posicao": 17,
+          "nome": "33",
+          "level": 2116,
+          "xp": null
+        },
+        {
+          "posicao": 18,
+          "nome": "33",
+          "level": 559,
+          "xp": null
+        },
+        {
+          "posicao": 19,
+          "nome": "32",
+          "level": 6648,
+          "xp": null
+        },
+        {
+          "posicao": 20,
+          "nome": "31",
+          "level": 4695,
+          "xp": null
+        },
+        {
+          "posicao": 21,
+          "nome": "31",
+          "level": 3495,
+          "xp": null
+        },
+        {
+          "posicao": 22,
+          "nome": "30",
+          "level": 5827,
+          "xp": null
+        },
+        {
+          "posicao": 23,
+          "nome": "30",
+          "level": 1243,
+          "xp": null
+        },
+        {
+          "posicao": 24,
+          "nome": "30",
+          "level": 530,
+          "xp": null
+        },
+        {
+          "posicao": 25,
+          "nome": "30",
+          "level": 169,
+          "xp": null
+        },
+        {
+          "posicao": 26,
+          "nome": "29",
+          "level": 5686,
+          "xp": null
+        },
+        {
+          "posicao": 27,
+          "nome": "29",
+          "level": 1349,
+          "xp": null
+        },
+        {
+          "posicao": 28,
+          "nome": "29",
+          "level": 860,
+          "xp": null
+        },
+        {
+          "posicao": 29,
+          "nome": "29",
+          "level": 739,
+          "xp": null
+        },
+        {
+          "posicao": 30,
+          "nome": "28",
+          "level": 4987,
+          "xp": null
+        },
+        {
+          "posicao": 31,
+          "nome": "28",
+          "level": 2486,
+          "xp": null
+        },
+        {
+          "posicao": 32,
+          "nome": "28",
+          "level": 1485,
+          "xp": null
+        },
+        {
+          "posicao": 33,
+          "nome": "28",
+          "level": 1032,
+          "xp": null
+        },
+        {
+          "posicao": 34,
+          "nome": "27",
+          "level": 3997,
+          "xp": null
+        },
+        {
+          "posicao": 35,
+          "nome": "27",
+          "level": 350,
+          "xp": null
+        },
+        {
+          "posicao": 36,
+          "nome": "26",
+          "level": 2277,
+          "xp": null
+        },
+        {
+          "posicao": 37,
+          "nome": "26",
+          "level": 1281,
+          "xp": null
+        },
+        {
+          "posicao": 38,
+          "nome": "25",
+          "level": 2635,
+          "xp": null
+        },
+        {
+          "posicao": 39,
+          "nome": "25",
+          "level": 2577,
+          "xp": null
+        },
+        {
+          "posicao": 40,
+          "nome": "25",
+          "level": 1921,
+          "xp": null
+        },
+        {
+          "posicao": 41,
+          "nome": "25",
+          "level": 586,
+          "xp": null
+        },
+        {
+          "posicao": 42,
+          "nome": "24",
+          "level": 2553,
+          "xp": null
+        },
+        {
+          "posicao": 43,
+          "nome": "24",
+          "level": 2220,
+          "xp": null
+        },
+        {
+          "posicao": 44,
+          "nome": "24",
+          "level": 1548,
+          "xp": null
+        },
+        {
+          "posicao": 45,
+          "nome": "24",
+          "level": 1206,
+          "xp": null
+        },
+        {
+          "posicao": 46,
+          "nome": "24",
+          "level": 1000,
+          "xp": null
+        },
+        {
+          "posicao": 47,
+          "nome": "24",
+          "level": 474,
+          "xp": null
+        },
+        {
+          "posicao": 48,
+          "nome": "23",
+          "level": 1385,
+          "xp": null
+        },
+        {
+          "posicao": 49,
+          "nome": "23",
+          "level": 1382,
+          "xp": null
+        },
+        {
+          "posicao": 50,
+          "nome": "23",
+          "level": 1264,
+          "xp": null
+        }
+      ],
+      "top3": [
+        {
+          "posicao": 4,
+          "nome": "42",
+          "level": 20484,
+          "xp": null
+        },
+        {
+          "posicao": 5,
+          "nome": "41",
+          "level": 38758,
+          "xp": null
+        },
+        {
+          "posicao": 6,
+          "nome": "41",
+          "level": 28207,
+          "xp": null
+        }
       ]
     },
     "strength": {
       "nome": "Força",
       "jogadores": [
-        "#4 45 64.985",
-        "#5 44 62.398",
-        "#6 43 22.777",
-        "#7 40 21.674",
-        "#8 40 20.280",
-        "#9 40 5.609",
-        "#10 39 10.217",
-        "#11 39 8.283",
-        "#12 38 26.373",
-        "#13 38 26.336",
-        "#14 38 20.952",
-        "#15 38 11.535",
-        "#16 38 7.164",
-        "#17 38 2.947",
-        "#18 37 20.255",
-        "#19 37 19.213",
-        "#20 37 10.567",
-        "#21 37 9.209",
-        "#22 36 11.947",
-        "#23 35 16.184",
-        "#24 35 13.057",
-        "#25 35 12.158",
-        "#26 35 11.902",
-        "#27 35 8.235",
-        "#28 35 4.638",
-        "#29 35 435",
-        "#30 34 3.531",
-        "#31 34 889",
-        "#32 34 450",
-        "#33 33 9.181",
-        "#34 33 9.143",
-        "#35 33 6.192",
-        "#36 32 5.388",
-        "#37 32 4.671",
-        "#38 32 1.983",
-        "#39 31 6.977",
-        "#40 31 6.581",
-        "#41 31 5.356",
-        "#42 31 3.668",
-        "#43 31 2.507",
-        "#44 31 239",
-        "#45 30 4.665",
-        "#46 30 4.399",
-        "#47 29 4.331",
-        "#48 29 757",
-        "#49 28 4.773",
-        "#50 28 4.662"
+        {
+          "posicao": 4,
+          "nome": "45",
+          "level": 64985,
+          "xp": null
+        },
+        {
+          "posicao": 5,
+          "nome": "44",
+          "level": 62398,
+          "xp": null
+        },
+        {
+          "posicao": 6,
+          "nome": "43",
+          "level": 22777,
+          "xp": null
+        },
+        {
+          "posicao": 7,
+          "nome": "40",
+          "level": 21674,
+          "xp": null
+        },
+        {
+          "posicao": 8,
+          "nome": "40",
+          "level": 20280,
+          "xp": null
+        },
+        {
+          "posicao": 9,
+          "nome": "40",
+          "level": 5609,
+          "xp": null
+        },
+        {
+          "posicao": 10,
+          "nome": "39",
+          "level": 10217,
+          "xp": null
+        },
+        {
+          "posicao": 11,
+          "nome": "39",
+          "level": 8283,
+          "xp": null
+        },
+        {
+          "posicao": 12,
+          "nome": "38",
+          "level": 26373,
+          "xp": null
+        },
+        {
+          "posicao": 13,
+          "nome": "38",
+          "level": 26336,
+          "xp": null
+        },
+        {
+          "posicao": 14,
+          "nome": "38",
+          "level": 20952,
+          "xp": null
+        },
+        {
+          "posicao": 15,
+          "nome": "38",
+          "level": 11535,
+          "xp": null
+        },
+        {
+          "posicao": 16,
+          "nome": "38",
+          "level": 7164,
+          "xp": null
+        },
+        {
+          "posicao": 17,
+          "nome": "38",
+          "level": 2947,
+          "xp": null
+        },
+        {
+          "posicao": 18,
+          "nome": "37",
+          "level": 20255,
+          "xp": null
+        },
+        {
+          "posicao": 19,
+          "nome": "37",
+          "level": 19213,
+          "xp": null
+        },
+        {
+          "posicao": 20,
+          "nome": "37",
+          "level": 10567,
+          "xp": null
+        },
+        {
+          "posicao": 21,
+          "nome": "37",
+          "level": 9209,
+          "xp": null
+        },
+        {
+          "posicao": 22,
+          "nome": "36",
+          "level": 11947,
+          "xp": null
+        },
+        {
+          "posicao": 23,
+          "nome": "35",
+          "level": 16184,
+          "xp": null
+        },
+        {
+          "posicao": 24,
+          "nome": "35",
+          "level": 13057,
+          "xp": null
+        },
+        {
+          "posicao": 25,
+          "nome": "35",
+          "level": 12158,
+          "xp": null
+        },
+        {
+          "posicao": 26,
+          "nome": "35",
+          "level": 11902,
+          "xp": null
+        },
+        {
+          "posicao": 27,
+          "nome": "35",
+          "level": 8235,
+          "xp": null
+        },
+        {
+          "posicao": 28,
+          "nome": "35",
+          "level": 4638,
+          "xp": null
+        },
+        {
+          "posicao": 29,
+          "nome": "35",
+          "level": 435,
+          "xp": null
+        },
+        {
+          "posicao": 30,
+          "nome": "34",
+          "level": 3531,
+          "xp": null
+        },
+        {
+          "posicao": 31,
+          "nome": "34",
+          "level": 889,
+          "xp": null
+        },
+        {
+          "posicao": 32,
+          "nome": "34",
+          "level": 450,
+          "xp": null
+        },
+        {
+          "posicao": 33,
+          "nome": "33",
+          "level": 9181,
+          "xp": null
+        },
+        {
+          "posicao": 34,
+          "nome": "33",
+          "level": 9143,
+          "xp": null
+        },
+        {
+          "posicao": 35,
+          "nome": "33",
+          "level": 6192,
+          "xp": null
+        },
+        {
+          "posicao": 36,
+          "nome": "32",
+          "level": 5388,
+          "xp": null
+        },
+        {
+          "posicao": 37,
+          "nome": "32",
+          "level": 4671,
+          "xp": null
+        },
+        {
+          "posicao": 38,
+          "nome": "32",
+          "level": 1983,
+          "xp": null
+        },
+        {
+          "posicao": 39,
+          "nome": "31",
+          "level": 6977,
+          "xp": null
+        },
+        {
+          "posicao": 40,
+          "nome": "31",
+          "level": 6581,
+          "xp": null
+        },
+        {
+          "posicao": 41,
+          "nome": "31",
+          "level": 5356,
+          "xp": null
+        },
+        {
+          "posicao": 42,
+          "nome": "31",
+          "level": 3668,
+          "xp": null
+        },
+        {
+          "posicao": 43,
+          "nome": "31",
+          "level": 2507,
+          "xp": null
+        },
+        {
+          "posicao": 44,
+          "nome": "31",
+          "level": 239,
+          "xp": null
+        },
+        {
+          "posicao": 45,
+          "nome": "30",
+          "level": 4665,
+          "xp": null
+        },
+        {
+          "posicao": 46,
+          "nome": "30",
+          "level": 4399,
+          "xp": null
+        },
+        {
+          "posicao": 47,
+          "nome": "29",
+          "level": 4331,
+          "xp": null
+        },
+        {
+          "posicao": 48,
+          "nome": "29",
+          "level": 757,
+          "xp": null
+        },
+        {
+          "posicao": 49,
+          "nome": "28",
+          "level": 4773,
+          "xp": null
+        },
+        {
+          "posicao": 50,
+          "nome": "28",
+          "level": 4662,
+          "xp": null
+        }
+      ],
+      "top3": [
+        {
+          "posicao": 4,
+          "nome": "45",
+          "level": 64985,
+          "xp": null
+        },
+        {
+          "posicao": 5,
+          "nome": "44",
+          "level": 62398,
+          "xp": null
+        },
+        {
+          "posicao": 6,
+          "nome": "43",
+          "level": 22777,
+          "xp": null
+        }
       ]
     },
     "pally": {
       "nome": "Paladino",
       "jogadores": [
-        "#4 43 9.307",
-        "#5 40 34.435",
-        "#6 40 27.577",
-        "#7 38 22.638",
-        "#8 38 19.688",
-        "#9 38 10.641",
-        "#10 38 2.444",
-        "#11 38 1.285",
-        "#12 37 20.020",
-        "#13 37 15.440",
-        "#14 37 10.376",
-        "#15 37 5.907",
-        "#16 37 613",
-        "#17 35 4.763",
-        "#18 35 2.998",
-        "#19 35 2.552",
-        "#20 34 10.206",
-        "#21 34 9.369",
-        "#22 33 3.736",
-        "#23 33 3.260",
-        "#24 33 412",
-        "#25 33 98",
-        "#26 32 9.589",
-        "#27 32 170",
-        "#28 31 2.827",
-        "#29 30 3.151",
-        "#30 30 2.779",
-        "#31 30 1.782",
-        "#32 29 4.987",
-        "#33 29 4.915",
-        "#34 29 3.787",
-        "#35 29 2.889",
-        "#36 29 1.937",
-        "#37 29 551",
-        "#38 28 4.314",
-        "#39 28 2.369",
-        "#40 27 2.851",
-        "#41 27 1.431",
-        "#42 27 963",
-        "#43 27 480",
-        "#44 27 191",
-        "#45 27 138",
-        "#46 26 3.544",
-        "#47 26 2.878",
-        "#48 26 2.790",
-        "#49 26 2.705",
-        "#50 26 2.426"
+        {
+          "posicao": 4,
+          "nome": "43",
+          "level": 9307,
+          "xp": null
+        },
+        {
+          "posicao": 5,
+          "nome": "40",
+          "level": 34435,
+          "xp": null
+        },
+        {
+          "posicao": 6,
+          "nome": "40",
+          "level": 27577,
+          "xp": null
+        },
+        {
+          "posicao": 7,
+          "nome": "38",
+          "level": 22638,
+          "xp": null
+        },
+        {
+          "posicao": 8,
+          "nome": "38",
+          "level": 19688,
+          "xp": null
+        },
+        {
+          "posicao": 9,
+          "nome": "38",
+          "level": 10641,
+          "xp": null
+        },
+        {
+          "posicao": 10,
+          "nome": "38",
+          "level": 2444,
+          "xp": null
+        },
+        {
+          "posicao": 11,
+          "nome": "38",
+          "level": 1285,
+          "xp": null
+        },
+        {
+          "posicao": 12,
+          "nome": "37",
+          "level": 20020,
+          "xp": null
+        },
+        {
+          "posicao": 13,
+          "nome": "37",
+          "level": 15440,
+          "xp": null
+        },
+        {
+          "posicao": 14,
+          "nome": "37",
+          "level": 10376,
+          "xp": null
+        },
+        {
+          "posicao": 15,
+          "nome": "37",
+          "level": 5907,
+          "xp": null
+        },
+        {
+          "posicao": 16,
+          "nome": "37",
+          "level": 613,
+          "xp": null
+        },
+        {
+          "posicao": 17,
+          "nome": "35",
+          "level": 4763,
+          "xp": null
+        },
+        {
+          "posicao": 18,
+          "nome": "35",
+          "level": 2998,
+          "xp": null
+        },
+        {
+          "posicao": 19,
+          "nome": "35",
+          "level": 2552,
+          "xp": null
+        },
+        {
+          "posicao": 20,
+          "nome": "34",
+          "level": 10206,
+          "xp": null
+        },
+        {
+          "posicao": 21,
+          "nome": "34",
+          "level": 9369,
+          "xp": null
+        },
+        {
+          "posicao": 22,
+          "nome": "33",
+          "level": 3736,
+          "xp": null
+        },
+        {
+          "posicao": 23,
+          "nome": "33",
+          "level": 3260,
+          "xp": null
+        },
+        {
+          "posicao": 24,
+          "nome": "33",
+          "level": 412,
+          "xp": null
+        },
+        {
+          "posicao": 25,
+          "nome": "33",
+          "level": 98,
+          "xp": null
+        },
+        {
+          "posicao": 26,
+          "nome": "32",
+          "level": 9589,
+          "xp": null
+        },
+        {
+          "posicao": 27,
+          "nome": "32",
+          "level": 170,
+          "xp": null
+        },
+        {
+          "posicao": 28,
+          "nome": "31",
+          "level": 2827,
+          "xp": null
+        },
+        {
+          "posicao": 29,
+          "nome": "30",
+          "level": 3151,
+          "xp": null
+        },
+        {
+          "posicao": 30,
+          "nome": "30",
+          "level": 2779,
+          "xp": null
+        },
+        {
+          "posicao": 31,
+          "nome": "30",
+          "level": 1782,
+          "xp": null
+        },
+        {
+          "posicao": 32,
+          "nome": "29",
+          "level": 4987,
+          "xp": null
+        },
+        {
+          "posicao": 33,
+          "nome": "29",
+          "level": 4915,
+          "xp": null
+        },
+        {
+          "posicao": 34,
+          "nome": "29",
+          "level": 3787,
+          "xp": null
+        },
+        {
+          "posicao": 35,
+          "nome": "29",
+          "level": 2889,
+          "xp": null
+        },
+        {
+          "posicao": 36,
+          "nome": "29",
+          "level": 1937,
+          "xp": null
+        },
+        {
+          "posicao": 37,
+          "nome": "29",
+          "level": 551,
+          "xp": null
+        },
+        {
+          "posicao": 38,
+          "nome": "28",
+          "level": 4314,
+          "xp": null
+        },
+        {
+          "posicao": 39,
+          "nome": "28",
+          "level": 2369,
+          "xp": null
+        },
+        {
+          "posicao": 40,
+          "nome": "27",
+          "level": 2851,
+          "xp": null
+        },
+        {
+          "posicao": 41,
+          "nome": "27",
+          "level": 1431,
+          "xp": null
+        },
+        {
+          "posicao": 42,
+          "nome": "27",
+          "level": 963,
+          "xp": null
+        },
+        {
+          "posicao": 43,
+          "nome": "27",
+          "level": 480,
+          "xp": null
+        },
+        {
+          "posicao": 44,
+          "nome": "27",
+          "level": 191,
+          "xp": null
+        },
+        {
+          "posicao": 45,
+          "nome": "27",
+          "level": 138,
+          "xp": null
+        },
+        {
+          "posicao": 46,
+          "nome": "26",
+          "level": 3544,
+          "xp": null
+        },
+        {
+          "posicao": 47,
+          "nome": "26",
+          "level": 2878,
+          "xp": null
+        },
+        {
+          "posicao": 48,
+          "nome": "26",
+          "level": 2790,
+          "xp": null
+        },
+        {
+          "posicao": 49,
+          "nome": "26",
+          "level": 2705,
+          "xp": null
+        },
+        {
+          "posicao": 50,
+          "nome": "26",
+          "level": 2426,
+          "xp": null
+        }
+      ],
+      "top3": [
+        {
+          "posicao": 4,
+          "nome": "43",
+          "level": 9307,
+          "xp": null
+        },
+        {
+          "posicao": 5,
+          "nome": "40",
+          "level": 34435,
+          "xp": null
+        },
+        {
+          "posicao": 6,
+          "nome": "40",
+          "level": 27577,
+          "xp": null
+        }
       ]
     },
     "defense": {
       "nome": "Defesa",
       "jogadores": [
-        "#4 51 218.799",
-        "#5 51 49.939",
-        "#6 47 129.872",
-        "#7 44 74.925",
-        "#8 44 18.429",
-        "#9 44 11.434",
-        "#10 42 52.715",
-        "#11 42 41.418",
-        "#12 42 18.466",
-        "#13 41 23.708",
-        "#14 41 7.134",
-        "#15 40 28.141",
-        "#16 40 23.647",
-        "#17 40 22.685",
-        "#18 40 13.458",
-        "#19 40 8.797",
-        "#20 39 40.908",
-        "#21 39 39.200",
-        "#22 39 36.556",
-        "#23 39 3.995",
-        "#24 39 2.682",
-        "#25 38 27.776",
-        "#26 38 20.537",
-        "#27 38 11.898",
-        "#28 38 9.413",
-        "#29 37 28.274",
-        "#30 37 24.247",
-        "#31 37 16.356",
-        "#32 37 15.246",
-        "#33 37 14.238",
-        "#34 37 8.545",
-        "#35 37 3.531",
-        "#36 36 25.448",
-        "#37 36 21.273",
-        "#38 36 20.151",
-        "#39 36 5.756",
-        "#40 36 622",
-        "#41 35 20.034",
-        "#42 35 19.787",
-        "#43 35 16.262",
-        "#44 35 10.349",
-        "#45 35 9.663",
-        "#46 35 5.850",
-        "#47 35 2.168",
-        "#48 35 769",
-        "#49 35 304",
-        "#50 34 5.452"
+        {
+          "posicao": 4,
+          "nome": "51",
+          "level": 218799,
+          "xp": null
+        },
+        {
+          "posicao": 5,
+          "nome": "51",
+          "level": 49939,
+          "xp": null
+        },
+        {
+          "posicao": 6,
+          "nome": "47",
+          "level": 129872,
+          "xp": null
+        },
+        {
+          "posicao": 7,
+          "nome": "44",
+          "level": 74925,
+          "xp": null
+        },
+        {
+          "posicao": 8,
+          "nome": "44",
+          "level": 18429,
+          "xp": null
+        },
+        {
+          "posicao": 9,
+          "nome": "44",
+          "level": 11434,
+          "xp": null
+        },
+        {
+          "posicao": 10,
+          "nome": "42",
+          "level": 52715,
+          "xp": null
+        },
+        {
+          "posicao": 11,
+          "nome": "42",
+          "level": 41418,
+          "xp": null
+        },
+        {
+          "posicao": 12,
+          "nome": "42",
+          "level": 18466,
+          "xp": null
+        },
+        {
+          "posicao": 13,
+          "nome": "41",
+          "level": 23708,
+          "xp": null
+        },
+        {
+          "posicao": 14,
+          "nome": "41",
+          "level": 7134,
+          "xp": null
+        },
+        {
+          "posicao": 15,
+          "nome": "40",
+          "level": 28141,
+          "xp": null
+        },
+        {
+          "posicao": 16,
+          "nome": "40",
+          "level": 23647,
+          "xp": null
+        },
+        {
+          "posicao": 17,
+          "nome": "40",
+          "level": 22685,
+          "xp": null
+        },
+        {
+          "posicao": 18,
+          "nome": "40",
+          "level": 13458,
+          "xp": null
+        },
+        {
+          "posicao": 19,
+          "nome": "40",
+          "level": 8797,
+          "xp": null
+        },
+        {
+          "posicao": 20,
+          "nome": "39",
+          "level": 40908,
+          "xp": null
+        },
+        {
+          "posicao": 21,
+          "nome": "39",
+          "level": 39200,
+          "xp": null
+        },
+        {
+          "posicao": 22,
+          "nome": "39",
+          "level": 36556,
+          "xp": null
+        },
+        {
+          "posicao": 23,
+          "nome": "39",
+          "level": 3995,
+          "xp": null
+        },
+        {
+          "posicao": 24,
+          "nome": "39",
+          "level": 2682,
+          "xp": null
+        },
+        {
+          "posicao": 25,
+          "nome": "38",
+          "level": 27776,
+          "xp": null
+        },
+        {
+          "posicao": 26,
+          "nome": "38",
+          "level": 20537,
+          "xp": null
+        },
+        {
+          "posicao": 27,
+          "nome": "38",
+          "level": 11898,
+          "xp": null
+        },
+        {
+          "posicao": 28,
+          "nome": "38",
+          "level": 9413,
+          "xp": null
+        },
+        {
+          "posicao": 29,
+          "nome": "37",
+          "level": 28274,
+          "xp": null
+        },
+        {
+          "posicao": 30,
+          "nome": "37",
+          "level": 24247,
+          "xp": null
+        },
+        {
+          "posicao": 31,
+          "nome": "37",
+          "level": 16356,
+          "xp": null
+        },
+        {
+          "posicao": 32,
+          "nome": "37",
+          "level": 15246,
+          "xp": null
+        },
+        {
+          "posicao": 33,
+          "nome": "37",
+          "level": 14238,
+          "xp": null
+        },
+        {
+          "posicao": 34,
+          "nome": "37",
+          "level": 8545,
+          "xp": null
+        },
+        {
+          "posicao": 35,
+          "nome": "37",
+          "level": 3531,
+          "xp": null
+        },
+        {
+          "posicao": 36,
+          "nome": "36",
+          "level": 25448,
+          "xp": null
+        },
+        {
+          "posicao": 37,
+          "nome": "36",
+          "level": 21273,
+          "xp": null
+        },
+        {
+          "posicao": 38,
+          "nome": "36",
+          "level": 20151,
+          "xp": null
+        },
+        {
+          "posicao": 39,
+          "nome": "36",
+          "level": 5756,
+          "xp": null
+        },
+        {
+          "posicao": 40,
+          "nome": "36",
+          "level": 622,
+          "xp": null
+        },
+        {
+          "posicao": 41,
+          "nome": "35",
+          "level": 20034,
+          "xp": null
+        },
+        {
+          "posicao": 42,
+          "nome": "35",
+          "level": 19787,
+          "xp": null
+        },
+        {
+          "posicao": 43,
+          "nome": "35",
+          "level": 16262,
+          "xp": null
+        },
+        {
+          "posicao": 44,
+          "nome": "35",
+          "level": 10349,
+          "xp": null
+        },
+        {
+          "posicao": 45,
+          "nome": "35",
+          "level": 9663,
+          "xp": null
+        },
+        {
+          "posicao": 46,
+          "nome": "35",
+          "level": 5850,
+          "xp": null
+        },
+        {
+          "posicao": 47,
+          "nome": "35",
+          "level": 2168,
+          "xp": null
+        },
+        {
+          "posicao": 48,
+          "nome": "35",
+          "level": 769,
+          "xp": null
+        },
+        {
+          "posicao": 49,
+          "nome": "35",
+          "level": 304,
+          "xp": null
+        },
+        {
+          "posicao": 50,
+          "nome": "34",
+          "level": 5452,
+          "xp": null
+        }
+      ],
+      "top3": [
+        {
+          "posicao": 4,
+          "nome": "51",
+          "level": 218799,
+          "xp": null
+        },
+        {
+          "posicao": 5,
+          "nome": "51",
+          "level": 49939,
+          "xp": null
+        },
+        {
+          "posicao": 6,
+          "nome": "47",
+          "level": 129872,
+          "xp": null
+        }
       ]
     }
   }
