@@ -23,6 +23,11 @@ def numero(texto):
     return int(texto) if texto else None
 
 
+def limpar_nome(texto):
+    texto = re.sub(r"\s+", " ", texto).strip()
+    return texto
+
+
 def coletar_categoria(categoria):
 
     url = f"{BASE_URL}?lang=pt&category={categoria}"
@@ -35,22 +40,14 @@ def coletar_categoria(categoria):
 
     resposta.raise_for_status()
 
-    soup = BeautifulSoup(resposta.text, "html.parser")
+    soup = BeautifulSoup(
+        resposta.text,
+        "html.parser"
+    )
 
-    print("\n===== DIAGNOSTICO =====")
-    print("Categoria:", categoria)
-    print("Status HTTP:", resposta.status_code)
-    print("Tamanho HTML:", len(resposta.text))
-    print("Tabelas encontradas:", len(soup.find_all("table")))
-    print("Linhas encontradas:", len(soup.find_all("tr")))
-    print("Cards encontrados:", len(soup.find_all(["div", "article"])))
-    print("===== INICIO DO HTML =====")
-    print(soup.get_text(" ", strip=True)[:2500])
-    print("===== FIM DO DIAGNOSTICO =====\n")
-    
     jogadores = {}
 
-    # Lê os jogadores da tabela
+    # Captura os jogadores da tabela
     for linha in soup.find_all("tr"):
 
         colunas = linha.find_all("td")
@@ -63,26 +60,31 @@ def coletar_categoria(categoria):
             for coluna in colunas
         ]
 
-        posicao_match = re.search(
+        # Posição
+        match_pos = re.search(
             r"#?\s*(\d+)",
             textos[0]
         )
 
-        if not posicao_match:
+        if not match_pos:
             continue
 
-        posicao = int(posicao_match.group(1))
+        posicao = int(match_pos.group(1))
 
-        coluna_nome = colunas[1]
-
-        link = coluna_nome.find("a")
+        # Nome do jogador
+        link = colunas[1].find("a")
 
         if link:
-            nome = link.get_text(" ", strip=True)
+            nome = limpar_nome(
+                link.get_text(" ", strip=True)
+            )
         else:
-            nome = coluna_nome.get_text(" ", strip=True)
+            nome = limpar_nome(textos[1])
 
+        # Nível da categoria
         level = numero(textos[2])
+
+        # Experiência da categoria
         xp = numero(textos[3])
 
         if not nome:
@@ -100,45 +102,56 @@ def coletar_categoria(categoria):
 
         texto = card.get_text(" ", strip=True)
 
-        posicao_match = re.search(
+        # Somente cards com posição 1, 2 ou 3
+        match_pos = re.search(
             r"#\s*([123])\b",
             texto
         )
 
-        if not posicao_match:
+        if not match_pos:
             continue
 
-        posicao = int(posicao_match.group(1))
+        posicao = int(match_pos.group(1))
 
-        # Evita considerar containers grandes
+        # Evita containers que englobam a página inteira
         if len(texto) > 500:
             continue
 
-        nome_tag = card.find(["h2", "h3", "h4"])
+        nome_tag = card.find(
+            ["h2", "h3", "h4"]
+        )
 
         if not nome_tag:
             continue
 
-        nome = nome_tag.get_text(" ", strip=True)
+        nome = limpar_nome(
+            nome_tag.get_text(" ", strip=True)
+        )
 
-        level_match = re.search(
-            r"Nível\s*([\d.]+)",
+        # Identifica nível e XP
+        match_level = re.search(
+            r"(?:Nível|Magia|Força|Paladino|Defesa)"
+            r"\s*(\d+)",
             texto,
             re.IGNORECASE
         )
 
-        xp_match = re.search(
+        match_xp = re.search(
             r"([\d.]+)\s*XP",
             texto,
             re.IGNORECASE
         )
 
-        if not level_match:
+        if not match_level:
             continue
 
-        level = numero(level_match.group(1))
+        level = numero(match_level.group(1))
 
-        xp = numero(xp_match.group(1)) if xp_match else None
+        xp = (
+            numero(match_xp.group(1))
+            if match_xp
+            else None
+        )
 
         jogadores[posicao] = {
             "posicao": posicao,
@@ -147,45 +160,72 @@ def coletar_categoria(categoria):
             "xp": xp
         }
 
-    return sorted(
+    # Ordena pela posição real do ranking
+    lista = sorted(
         jogadores.values(),
         key=lambda jogador: jogador["posicao"]
     )
 
+    return lista
+
 
 def coletar():
 
+    agora = datetime.now(
+        ZoneInfo("America/Sao_Paulo")
+    )
+
     resultado = {
-        "data": datetime.now(
-            ZoneInfo("America/Sao_Paulo")
-        ).isoformat(),
+        "data": agora.isoformat(),
         "categorias": {}
     }
 
-    for categoria, nome in CATEGORIAS.items():
+    total_jogadores = 0
+
+    for categoria, nome_categoria in CATEGORIAS.items():
 
         jogadores = coletar_categoria(categoria)
 
+        print(
+            f"{nome_categoria}: "
+            f"{len(jogadores)} jogadores"
+        )
+
+        # Exige pelo menos os 50 jogadores
+        if len(jogadores) != 50:
+
+            raise RuntimeError(
+                f"{nome_categoria}: esperado 50 jogadores, "
+                f"encontrados {len(jogadores)}. "
+                "JSON anterior preservado."
+            )
+
+        # Verifica posições
+        posicoes = [
+            jogador["posicao"]
+            for jogador in jogadores
+        ]
+
+        if posicoes != list(range(1, 51)):
+
+            raise RuntimeError(
+                f"{nome_categoria}: posições incorretas. "
+                "JSON anterior preservado."
+            )
+
         resultado["categorias"][categoria] = {
-            "nome": nome,
+            "nome": nome_categoria,
             "jogadores": jogadores,
             "top3": jogadores[:3]
         }
 
-        print(
-            f"{nome}: {len(jogadores)} jogadores"
-        )
+        total_jogadores += len(jogadores)
 
-    # Não sobrescreve o ranking com dados vazios
-    total = sum(
-        len(item["jogadores"])
-        for item in resultado["categorias"].values()
-    )
+    # Só salva se todas as categorias estiverem completas
+    if total_jogadores != 250:
 
-    if total == 0:
         raise RuntimeError(
-            "Nenhum jogador encontrado. "
-            "Ranking anterior preservado."
+            "Coleta incompleta. JSON anterior preservado."
         )
 
     with open(
@@ -201,7 +241,9 @@ def coletar():
             indent=2
         )
 
-    print("Coleta finalizada.")
+    print("Coleta finalizada: 250 jogadores.")
+    print("5 categorias completas.")
+    print("Top 3 incluído em cada categoria.")
 
 
 if __name__ == "__main__":
