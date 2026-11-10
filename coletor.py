@@ -51,7 +51,11 @@ def coletar_categoria(categoria):
     for linha in soup.find_all("tr"):
 
         colunas = linha.find_all("td")
-
+if colunas:
+    print("CELULAS:", [
+        c.get_text(" ", strip=True)
+        for c in colunas
+    ])
         if len(colunas) < 4:
             continue
 
