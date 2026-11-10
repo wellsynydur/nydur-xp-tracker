@@ -17,28 +17,10 @@ CATEGORIAS = {
 }
 
 
-def normalizar(texto):
-    texto = texto.lower().strip()
-    texto = texto.replace("í", "i")
-    texto = texto.replace("á", "a")
-    texto = texto.replace("ã", "a")
-    texto = texto.replace("ç", "c")
-    texto = texto.replace("ê", "e")
-    texto = texto.replace("é", "e")
-    texto = texto.replace("ó", "o")
-    texto = texto.replace("ú", "u")
-    return texto
-
-
 def numero(texto):
-    texto = str(texto).strip()
-
+    texto = str(texto)
     texto = re.sub(r"[^\d]", "", texto)
-
-    if not texto:
-        return None
-
-    return int(texto)
+    return int(texto) if texto else None
 
 
 def coletar_categoria(categoria):
@@ -48,187 +30,152 @@ def coletar_categoria(categoria):
     resposta = requests.get(
         url,
         timeout=30,
-        headers={
-            "User-Agent": "Mozilla/5.0"
-        }
+        headers={"User-Agent": "Mozilla/5.0"}
     )
 
     resposta.raise_for_status()
 
-    soup = BeautifulSoup(
-        resposta.text,
-        "html.parser"
-    )
+    soup = BeautifulSoup(resposta.text, "html.parser")
 
-    jogadores = []
+    jogadores = {}
 
-    tabelas = soup.find_all("table")
+    # Lê os jogadores da tabela
+    for linha in soup.find_all("tr"):
 
-    for tabela in tabelas:
+        colunas = linha.find_all("td")
 
-        cabecalho = tabela.find("thead")
-
-        if cabecalho is None:
+        if len(colunas) < 4:
             continue
 
-        colunas_header = cabecalho.find_all("th")
-
-        nomes_colunas = [
-            normalizar(
-                coluna.get_text(" ", strip=True)
-            )
-            for coluna in colunas_header
+        textos = [
+            coluna.get_text(" ", strip=True)
+            for coluna in colunas
         ]
 
-        if not nomes_colunas:
+        posicao_match = re.search(
+            r"#?\s*(\d+)",
+            textos[0]
+        )
+
+        if not posicao_match:
             continue
 
-        indice_posicao = None
-        indice_jogador = None
-        indice_level = None
-        indice_xp = None
+        posicao = int(posicao_match.group(1))
 
-        for i, nome in enumerate(nomes_colunas):
+        coluna_nome = colunas[1]
 
-            if "posicao" in nome or "posição" in nome:
-                indice_posicao = i
+        link = coluna_nome.find("a")
 
-            elif "jogador" in nome:
-                indice_jogador = i
+        if link:
+            nome = link.get_text(" ", strip=True)
+        else:
+            nome = coluna_nome.get_text(" ", strip=True)
 
-            elif "nivel" in nome or "level" in nome:
-                indice_level = i
+        level = numero(textos[2])
+        xp = numero(textos[3])
 
-            elif "experiencia" in nome or "xp" in nome:
-                indice_xp = i
-
-        if (
-            indice_posicao is None
-            or indice_jogador is None
-            or indice_level is None
-            or indice_xp is None
-        ):
+        if not nome:
             continue
 
-        linhas = tabela.find_all("tr")
+        jogadores[posicao] = {
+            "posicao": posicao,
+            "nome": nome,
+            "level": level,
+            "xp": xp
+        }
 
-        for linha in linhas:
+    # Captura os cards do Top 1, 2 e 3
+    for card in soup.find_all(["div", "article"]):
 
-            colunas = linha.find_all("td")
+        texto = card.get_text(" ", strip=True)
 
-            if not colunas:
-                continue
+        posicao_match = re.search(
+            r"#\s*([123])\b",
+            texto
+        )
 
-            if len(colunas) <= max(
-                indice_posicao,
-                indice_jogador,
-                indice_level,
-                indice_xp
-            ):
-                continue
+        if not posicao_match:
+            continue
 
-            posicao = numero(
-                colunas[indice_posicao].get_text(
-                    " ", strip=True
-                )
-            )
+        posicao = int(posicao_match.group(1))
 
-            coluna_jogador = colunas[indice_jogador]
+        # Evita considerar containers grandes
+        if len(texto) > 500:
+            continue
 
-            link = coluna_jogador.find("a")
+        nome_tag = card.find(["h2", "h3", "h4"])
 
-            if link:
-                nome = link.get_text(
-                    " ", strip=True
-                )
-            else:
-                nome = coluna_jogador.get_text(
-                    " ", strip=True
-                )
+        if not nome_tag:
+            continue
 
-            level = numero(
-                colunas[indice_level].get_text(
-                    " ", strip=True
-                )
-            )
+        nome = nome_tag.get_text(" ", strip=True)
 
-            xp = numero(
-                colunas[indice_xp].get_text(
-                    " ", strip=True
-                )
-            )
+        level_match = re.search(
+            r"Nível\s*([\d.]+)",
+            texto,
+            re.IGNORECASE
+        )
 
-            if not nome or posicao is None:
-                continue
+        xp_match = re.search(
+            r"([\d.]+)\s*XP",
+            texto,
+            re.IGNORECASE
+        )
 
-            jogadores.append({
-                "posicao": posicao,
-                "nome": nome,
-                "level": level,
-                "xp": xp
-            })
+        if not level_match:
+            continue
 
-        if jogadores:
-            break
+        level = numero(level_match.group(1))
 
-    jogadores.sort(
+        xp = numero(xp_match.group(1)) if xp_match else None
+
+        jogadores[posicao] = {
+            "posicao": posicao,
+            "nome": nome,
+            "level": level,
+            "xp": xp
+        }
+
+    return sorted(
+        jogadores.values(),
         key=lambda jogador: jogador["posicao"]
     )
-
-    return jogadores
 
 
 def coletar():
 
-    agora = datetime.now(
-        ZoneInfo("America/Sao_Paulo")
-    )
-
     resultado = {
-        "data": agora.isoformat(),
+        "data": datetime.now(
+            ZoneInfo("America/Sao_Paulo")
+        ).isoformat(),
         "categorias": {}
     }
 
-    for categoria, nome_categoria in CATEGORIAS.items():
+    for categoria, nome in CATEGORIAS.items():
 
-        try:
+        jogadores = coletar_categoria(categoria)
 
-            jogadores = coletar_categoria(
-                categoria
-            )
+        resultado["categorias"][categoria] = {
+            "nome": nome,
+            "jogadores": jogadores,
+            "top3": jogadores[:3]
+        }
 
-            resultado["categorias"][categoria] = {
-                "nome": nome_categoria,
-                "jogadores": jogadores,
-                "top3": jogadores[:3]
-            }
+        print(
+            f"{nome}: {len(jogadores)} jogadores"
+        )
 
-            print(
-                f"{nome_categoria}: "
-                f"{len(jogadores)} jogadores"
-            )
+    # Não sobrescreve o ranking com dados vazios
+    total = sum(
+        len(item["jogadores"])
+        for item in resultado["categorias"].values()
+    )
 
-            for jogador in jogadores[:3]:
-
-                print(
-                    jogador["posicao"],
-                    jogador["nome"],
-                    jogador["level"],
-                    jogador["xp"]
-                )
-
-        except Exception as erro:
-
-            print(
-                f"Erro em {nome_categoria}: {erro}"
-            )
-
-            resultado["categorias"][categoria] = {
-                "nome": nome_categoria,
-                "jogadores": [],
-                "top3": [],
-                "erro": str(erro)
-            }
+    if total == 0:
+        raise RuntimeError(
+            "Nenhum jogador encontrado. "
+            "Ranking anterior preservado."
+        )
 
     with open(
         "ranking_atual.json",
