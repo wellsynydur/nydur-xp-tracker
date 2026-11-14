@@ -1,5 +1,5 @@
 {
-  "data": "2026-11-13T18:42:42.846306-03:00",
+  "data": "2026-11-13T22:53:38.920965-03:00",
   "categorias": {
     "level": {
       "nome": "XP Level",
@@ -13,8 +13,8 @@
         {
           "posicao": 2,
           "nome": "Descarte",
-          "level": 242,
-          "xp": 1286176
+          "level": 243,
+          "xp": 434
         },
         {
           "posicao": 3,
@@ -25,8 +25,8 @@
         {
           "posicao": 4,
           "nome": "K Kenji",
-          "level": 204,
-          "xp": 895201
+          "level": 205,
+          "xp": 204152
         },
         {
           "posicao": 5,
@@ -43,8 +43,8 @@
         {
           "posicao": 7,
           "nome": "S sdDALT Nazar",
-          "level": 170,
-          "xp": 661377
+          "level": 171,
+          "xp": 179534
         },
         {
           "posicao": 8,
@@ -56,7 +56,7 @@
           "posicao": 9,
           "nome": "W Wellsy",
           "level": 141,
-          "xp": 404909
+          "xp": 415861
         },
         {
           "posicao": 10,
@@ -86,7 +86,7 @@
           "posicao": 14,
           "nome": "D DragonDraco",
           "level": 119,
-          "xp": 153209
+          "xp": 169915
         },
         {
           "posicao": 15,
@@ -204,15 +204,15 @@
         },
         {
           "posicao": 34,
-          "nome": "A Akashi",
+          "nome": "R respasse",
           "level": 85,
-          "xp": 10082
+          "xp": 163675
         },
         {
           "posicao": 35,
-          "nome": "R respasse",
-          "level": 84,
-          "xp": 98027
+          "nome": "A Akashi",
+          "level": 85,
+          "xp": 10082
         },
         {
           "posicao": 36,
@@ -241,8 +241,8 @@
         {
           "posicao": 40,
           "nome": "K KING TITAN",
-          "level": 75,
-          "xp": 25640
+          "level": 74,
+          "xp": 154701
         },
         {
           "posicao": 41,
@@ -295,8 +295,8 @@
         {
           "posicao": 49,
           "nome": "M Myths",
-          "level": 66,
-          "xp": 105896
+          "level": 68,
+          "xp": 41527
         },
         {
           "posicao": 50,
@@ -315,8 +315,8 @@
         {
           "posicao": 2,
           "nome": "Descarte",
-          "level": 242,
-          "xp": 1286176
+          "level": 243,
+          "xp": 434
         },
         {
           "posicao": 3,
@@ -339,7 +339,7 @@
           "posicao": 2,
           "nome": "Descarte",
           "level": 45,
-          "xp": 84793
+          "xp": 85315
         },
         {
           "posicao": 3,
@@ -423,7 +423,7 @@
           "posicao": 16,
           "nome": "S sdDALT Nazar",
           "level": 34,
-          "xp": 4567
+          "xp": 4593
         },
         {
           "posicao": 17,
@@ -615,7 +615,7 @@
           "posicao": 48,
           "nome": "K Kenji",
           "level": 23,
-          "xp": 1439
+          "xp": 1961
         },
         {
           "posicao": 49,
@@ -641,7 +641,7 @@
           "posicao": 2,
           "nome": "Descarte",
           "level": 45,
-          "xp": 84793
+          "xp": 85315
         },
         {
           "posicao": 3,
@@ -658,13 +658,13 @@
           "posicao": 1,
           "nome": "Kenji",
           "level": 52,
-          "xp": 59567
+          "xp": 71566
         },
         {
           "posicao": 2,
           "nome": "KING TITAN",
           "level": 49,
-          "xp": 139007
+          "xp": 150212
         },
         {
           "posicao": 3,
@@ -718,7 +718,7 @@
           "posicao": 11,
           "nome": "R respasse",
           "level": 39,
-          "xp": 19801
+          "xp": 24791
         },
         {
           "posicao": 12,
@@ -728,15 +728,15 @@
         },
         {
           "posicao": 13,
-          "nome": "U Uvokin",
-          "level": 38,
-          "xp": 26373
+          "nome": "M Myths",
+          "level": 39,
+          "xp": 3012
         },
         {
           "posicao": 14,
-          "nome": "M Myths",
+          "nome": "U Uvokin",
           "level": 38,
-          "xp": 20986
+          "xp": 26373
         },
         {
           "posicao": 15,
@@ -770,21 +770,21 @@
         },
         {
           "posicao": 20,
+          "nome": "D DragonDraco",
+          "level": 37,
+          "xp": 22058
+        },
+        {
+          "posicao": 21,
           "nome": "X Xeina",
           "level": 37,
           "xp": 20255
         },
         {
-          "posicao": 21,
+          "posicao": 22,
           "nome": "S six six six",
           "level": 37,
           "xp": 19213
-        },
-        {
-          "posicao": 22,
-          "nome": "D DragonDraco",
-          "level": 37,
-          "xp": 12330
         },
         {
           "posicao": 23,
@@ -960,13 +960,13 @@
           "posicao": 1,
           "nome": "Kenji",
           "level": 52,
-          "xp": 59567
+          "xp": 71566
         },
         {
           "posicao": 2,
           "nome": "KING TITAN",
           "level": 49,
-          "xp": 139007
+          "xp": 150212
         },
         {
           "posicao": 3,
@@ -983,7 +983,7 @@
           "posicao": 1,
           "nome": "Wellsy",
           "level": 51,
-          "xp": 202513
+          "xp": 220240
         },
         {
           "posicao": 2,
@@ -995,7 +995,7 @@
           "posicao": 3,
           "nome": "sdDALT Nazar",
           "level": 44,
-          "xp": 28546
+          "xp": 28994
         },
         {
           "posicao": 4,
@@ -1285,7 +1285,7 @@
           "posicao": 1,
           "nome": "Wellsy",
           "level": 51,
-          "xp": 202513
+          "xp": 220240
         },
         {
           "posicao": 2,
@@ -1297,7 +1297,7 @@
           "posicao": 3,
           "nome": "sdDALT Nazar",
           "level": 44,
-          "xp": 28546
+          "xp": 28994
         }
       ]
     },
@@ -1314,19 +1314,19 @@
           "posicao": 2,
           "nome": "Wellsy",
           "level": 54,
-          "xp": 200013
+          "xp": 238013
         },
         {
           "posicao": 3,
           "nome": "Kenji",
           "level": 53,
-          "xp": 304
+          "xp": 23295
         },
         {
           "posicao": 4,
           "nome": "K KING TITAN",
           "level": 52,
-          "xp": 22854
+          "xp": 46861
         },
         {
           "posicao": 5,
@@ -1350,7 +1350,7 @@
           "posicao": 8,
           "nome": "D Descarte",
           "level": 44,
-          "xp": 60550
+          "xp": 61147
         },
         {
           "posicao": 9,
@@ -1440,25 +1440,25 @@
           "posicao": 23,
           "nome": "S sdDALT Nazar",
           "level": 39,
-          "xp": 11102
+          "xp": 11228
         },
         {
           "posicao": 24,
+          "nome": "M Myths",
+          "level": 39,
+          "xp": 6839
+        },
+        {
+          "posicao": 25,
           "nome": "G gafzhwpu",
           "level": 39,
           "xp": 3995
         },
         {
-          "posicao": 25,
+          "posicao": 26,
           "nome": "O Orzel",
           "level": 39,
           "xp": 2926
-        },
-        {
-          "posicao": 26,
-          "nome": "M Myths",
-          "level": 38,
-          "xp": 34240
         },
         {
           "posicao": 27,
@@ -1468,33 +1468,33 @@
         },
         {
           "posicao": 28,
+          "nome": "D DragonDraco",
+          "level": 38,
+          "xp": 20279
+        },
+        {
+          "posicao": 29,
           "nome": "M mago",
           "level": 38,
           "xp": 11898
         },
         {
-          "posicao": 29,
+          "posicao": 30,
           "nome": "J JunioBr",
           "level": 38,
           "xp": 11607
         },
         {
-          "posicao": 30,
+          "posicao": 31,
           "nome": "C Cabuloso",
           "level": 38,
           "xp": 9413
         },
         {
-          "posicao": 31,
+          "posicao": 32,
           "nome": "X Xamps",
           "level": 38,
           "xp": 6962
-        },
-        {
-          "posicao": 32,
-          "nome": "D DragonDraco",
-          "level": 38,
-          "xp": 4239
         },
         {
           "posicao": 33,
@@ -1540,15 +1540,15 @@
         },
         {
           "posicao": 40,
-          "nome": "A Astroaly",
+          "nome": "R respasse",
           "level": 36,
-          "xp": 5756
+          "xp": 7940
         },
         {
           "posicao": 41,
-          "nome": "R respasse",
+          "nome": "A Astroaly",
           "level": 36,
-          "xp": 3464
+          "xp": 5756
         },
         {
           "posicao": 42,
@@ -1616,13 +1616,13 @@
           "posicao": 2,
           "nome": "Wellsy",
           "level": 54,
-          "xp": 200013
+          "xp": 238013
         },
         {
           "posicao": 3,
           "nome": "Kenji",
           "level": 53,
-          "xp": 304
+          "xp": 23295
         }
       ]
     }
