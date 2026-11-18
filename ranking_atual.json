@@ -1,5 +1,5 @@
 {
-  "data": "2026-11-18T06:24:25.139835-03:00",
+  "data": "2026-11-18T15:29:46.377704-03:00",
   "categorias": {
     "level": {
       "nome": "XP Level",
@@ -8,25 +8,25 @@
           "posicao": 1,
           "nome": "Dsiey",
           "level": 382,
-          "xp": 157958
+          "xp": 180838
         },
         {
           "posicao": 2,
           "nome": "Descarte",
-          "level": 247,
-          "xp": 1272313
+          "level": 248,
+          "xp": 284827
         },
         {
           "posicao": 3,
           "nome": "Mystery",
-          "level": 217,
-          "xp": 1041541
+          "level": 218,
+          "xp": 90671
         },
         {
           "posicao": 4,
           "nome": "K Kenji",
           "level": 209,
-          "xp": 175163
+          "xp": 194926
         },
         {
           "posicao": 5,
@@ -80,7 +80,7 @@
           "posicao": 13,
           "nome": "M Menor Violento",
           "level": 122,
-          "xp": 204248
+          "xp": 16631
         },
         {
           "posicao": 14,
@@ -193,8 +193,8 @@
         {
           "posicao": 32,
           "nome": "R respasse",
-          "level": 88,
-          "xp": 200090
+          "level": 89,
+          "xp": 128988
         },
         {
           "posicao": 33,
@@ -236,7 +236,7 @@
           "posicao": 39,
           "nome": "M Myths",
           "level": 78,
-          "xp": 57539
+          "xp": 58430
         },
         {
           "posicao": 40,
@@ -310,19 +310,19 @@
           "posicao": 1,
           "nome": "Dsiey",
           "level": 382,
-          "xp": 157958
+          "xp": 180838
         },
         {
           "posicao": 2,
           "nome": "Descarte",
-          "level": 247,
-          "xp": 1272313
+          "level": 248,
+          "xp": 284827
         },
         {
           "posicao": 3,
           "nome": "Mystery",
-          "level": 217,
-          "xp": 1041541
+          "level": 218,
+          "xp": 90671
         }
       ]
     },
@@ -339,13 +339,13 @@
           "posicao": 2,
           "nome": "Descarte",
           "level": 46,
-          "xp": 56604
+          "xp": 62178
         },
         {
           "posicao": 3,
           "nome": "Dsiey",
           "level": 43,
-          "xp": 31146
+          "xp": 31216
         },
         {
           "posicao": 4,
@@ -435,7 +435,7 @@
           "posicao": 18,
           "nome": "A Aurora",
           "level": 34,
-          "xp": 8847
+          "xp": 8940
         },
         {
           "posicao": 19,
@@ -525,7 +525,7 @@
           "posicao": 33,
           "nome": "K Kenji",
           "level": 28,
-          "xp": 4119
+          "xp": 4139
         },
         {
           "posicao": 34,
@@ -641,13 +641,13 @@
           "posicao": 2,
           "nome": "Descarte",
           "level": 46,
-          "xp": 56604
+          "xp": 62178
         },
         {
           "posicao": 3,
           "nome": "Dsiey",
           "level": 43,
-          "xp": 31146
+          "xp": 31216
         }
       ]
     },
@@ -658,7 +658,7 @@
           "posicao": 1,
           "nome": "Kenji",
           "level": 52,
-          "xp": 231771
+          "xp": 262996
         },
         {
           "posicao": 2,
@@ -688,7 +688,7 @@
           "posicao": 6,
           "nome": "M Mystery",
           "level": 43,
-          "xp": 32477
+          "xp": 32615
         },
         {
           "posicao": 7,
@@ -710,15 +710,15 @@
         },
         {
           "posicao": 10,
-          "nome": "R respasse",
+          "nome": "M Myths",
           "level": 40,
-          "xp": 7030
+          "xp": 12439
         },
         {
           "posicao": 11,
-          "nome": "M Myths",
+          "nome": "R respasse",
           "level": 40,
-          "xp": 6177
+          "xp": 9123
         },
         {
           "posicao": 12,
@@ -960,7 +960,7 @@
           "posicao": 1,
           "nome": "Kenji",
           "level": 52,
-          "xp": 231771
+          "xp": 262996
         },
         {
           "posicao": 2,
@@ -1320,7 +1320,7 @@
           "posicao": 3,
           "nome": "Kenji",
           "level": 53,
-          "xp": 355014
+          "xp": 422011
         },
         {
           "posicao": 4,
@@ -1332,7 +1332,7 @@
           "posicao": 5,
           "nome": "D Dsiey",
           "level": 51,
-          "xp": 167272
+          "xp": 167337
         },
         {
           "posicao": 6,
@@ -1344,7 +1344,7 @@
           "posicao": 7,
           "nome": "D Descarte",
           "level": 45,
-          "xp": 40102
+          "xp": 49806
         },
         {
           "posicao": 8,
@@ -1374,7 +1374,7 @@
           "posicao": 12,
           "nome": "M Myths",
           "level": 42,
-          "xp": 30781
+          "xp": 38203
         },
         {
           "posicao": 13,
@@ -1536,7 +1536,7 @@
           "posicao": 39,
           "nome": "A Aurora",
           "level": 37,
-          "xp": 2636
+          "xp": 2711
         },
         {
           "posicao": 40,
@@ -1548,7 +1548,7 @@
           "posicao": 41,
           "nome": "R respasse",
           "level": 36,
-          "xp": 17318
+          "xp": 18430
         },
         {
           "posicao": 42,
@@ -1602,7 +1602,7 @@
           "posicao": 50,
           "nome": "M Menor Violento",
           "level": 34,
-          "xp": 5452
+          "xp": 5569
         }
       ],
       "top3": [
@@ -1622,7 +1622,7 @@
           "posicao": 3,
           "nome": "Kenji",
           "level": 53,
-          "xp": 355014
+          "xp": 422011
         }
       ]
     }
